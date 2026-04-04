@@ -1,6 +1,6 @@
 import { BsFiletypeHtml, BsFiletypeCss, BsBootstrap } from "react-icons/bs";
 import { FaNodeJs } from "react-icons/fa";
-// import { TbBrandNextjs } from "react-icons/tb";
+
 import {
   SiJavascript,
   SiMui,
