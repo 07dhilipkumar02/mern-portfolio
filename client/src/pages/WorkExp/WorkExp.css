@@ -1,0 +1,47 @@
+.work{
+    background-color: #1387812a;
+    margin-left: 140px;
+    
+}
+.work-exp{
+padding: 60px 0px;
+}
+.work-exp h2{
+    font-weight: bold;
+    color: #1e1e2c;
+}
+.work-exp hr{
+    color: #138781;
+    width: 400px;
+    margin: 10px auto;
+}
+.work-exp .vertical-timeline-element-title{
+    color: #138781;
+}
+.work-exp .vertical-timeline-element-subtitle{
+    color: #1e1e2c78;
+}
+
+/* ========= MOBILE RESPONSIVE ========= */
+
+@media (max-width: 768px){
+
+  .work{
+      margin-left: 0px;
+      padding: 10px;
+  }
+
+  .work-exp{
+      padding: 30px 10px;
+  }
+
+  .work-exp h2{
+      font-size: 24px;
+      text-align: center;
+  }
+
+  .work-exp hr{
+      width: 200px;
+  }
+
+}
