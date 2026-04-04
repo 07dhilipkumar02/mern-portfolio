@@ -25,8 +25,8 @@ const sendEmailController = async (req, res) => {
     //email matter
      await Contact.create({ name, email, msg });
        const info =  await transporter.sendMail({
-      to: "vlakshmidhilip@gmail.com",
-      from:"ddhilip613@gmail.com",
+      to: "Enter your email",
+      from:"Enter your email",
       replyTo: email,
 
       subject: "Regarding Mern Portfolio App",
