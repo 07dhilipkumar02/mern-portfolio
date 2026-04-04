@@ -17,7 +17,7 @@ const Contact = () => {
           if (!name || !email || !msg) {
             toast.error("PLease Provide all fields");
           }
-          const res = await axios.post("https://mern-portfolio-11.onrender.com/api/portfolio1/sendEmail", {
+          const res = await axios.post("https://mern-portfolio-12.onrender.com/api/portfolio1/sendEmail", {
             name,
             email,
             msg,
