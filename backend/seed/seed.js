@@ -16,7 +16,7 @@ const profileData = {
   about:
     "I am an aspiring Full Stack Developer with hands-on experience in the MERN Stack, including MongoDB, Express.js, React.js, and Node.js. I have completed training in Artificial Intelligence and Machine Learning and enjoy building modern, responsive, and user-friendly web applications. I am passionate about learning new technologies, solving real-world problems, and developing scalable web solutions. Currently, I am looking for opportunities to enhance my skills and grow as a professional software developer.",
   avatarUrl: "/dk.jpeg",
-  resumeUrl: "/Dhilip_kumar_MERN_Developer_Resume.pdf",
+  resumeUrl: "/Dhilipkumar_MERN_Developer_Resume.pdf",
   education: {
     degree: "BE EEE",
     institution: "Anna University",
@@ -32,13 +32,12 @@ const profileData = {
     dedication: "100%",
   },
   contact: {
-    email: "dhilipkumar@example.com",
-    phone: "+91 98765 43210",
+    email: "vlakshmidhilip@gmail.com",
+    phone: "+91 8148727707",
     location: "Hosur, Tamil Nadu, India",
     github: "https://github.com/07dhilipkumar02",
     linkedin: "https://www.linkedin.com/in/dhilip-kumar-07dk02",
-    twitter: "",
-    portfolio: "https://www.dhilipkumar.dev",
+    
   },
 };
 
