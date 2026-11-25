@@ -4,11 +4,12 @@ const projectSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
     description: { type: String, required: true },
+    category: { type: String, default: "" }, // e.g. "Generative AI" (shown on featured projects)
     imageUrl: { type: String },
     tags: [{ type: String }],
     liveUrl: { type: String },
     githubUrl: { type: String },
-    featured: { type: Boolean, default: true },
+    featured: { type: Boolean, default: false },
     order: { type: Number, default: 0 },
   },
   { timestamps: true }

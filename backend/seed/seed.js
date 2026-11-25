@@ -10,21 +10,21 @@ dotenv.config();
 
 const profileData = {
   name: "Dhilipkumar",
-  role: "Full Stack Developer",
+  role: "Full Stack Developer | MERN Stack | AI Integration",
   tagline:
-    "I build responsive, user-friendly web applications with the MERN stack and love turning ideas into real-world solutions.",
+    "Full Stack Developer specializing in MERN stack development, building responsive web applications, REST APIs, and scalable backend solutions. Currently expanding my expertise in AI, LLMs, RAG, and Agentic AI to develop intelligent applications.",
   about:
-    "I am an aspiring Full Stack Developer with hands-on experience in the MERN Stack, including MongoDB, Express.js, React.js, and Node.js. I have completed training in Artificial Intelligence and Machine Learning and enjoy building modern, responsive, and user-friendly web applications. I am passionate about learning new technologies, solving real-world problems, and developing scalable web solutions. Currently, I am looking for opportunities to enhance my skills and grow as a professional software developer.",
+    "I'm a Full Stack Developer with hands-on experience building modern web applications using the MERN stack. My expertise includes React.js, Node.js, Express.js, MongoDB, REST APIs, and responsive UI development.I enjoy solving real-world problems through clean, scalable, and user-friendly software. Alongside full-stack development, I'm expanding my knowledge in Artificial Intelligence, Machine Learning, Large Language Models, Retrieval-Augmented Generation (RAG), and AI-powered applications.I'm passionate about continuous learning, building innovative projects, and developing solutions that combine modern web technologies with AI.",
   avatarUrl: "/dk.jpeg",
-  resumeUrl: "/Dhilipkumar_MERN_Developer_Resume.pdf",
+  resumeUrl: "/Dhilip_kumar_MERN_Developer_Resume.pdf",
   education: {
     degree: "BE EEE",
     institution: "Anna University",
   },
-  experienceStatus: "3+ Years",
-  experienceNote: "Full Stack Development",
-  focusArea: "Web Development",
-  focusNote: "Clean & Scalable Code",
+  experienceStatus: "Full Stack Development",
+  experienceNote: "Professional Experience",
+  focusArea: "Full Stack & AI Development",
+  focusNote: "Scalable Applications",
   stats: {
     projectsCompleted: 10,
     githubStars: 40,
@@ -42,84 +42,146 @@ const profileData = {
 };
 
 const skillsData = [
-  { name: "HTML5", icon: "html5", color: "#e34f26", order: 1 },
-  { name: "CSS3", icon: "css3", color: "#1572b6", order: 2 },
-  { name: "JavaScript", icon: "javascript", color: "#f7df1e", order: 3 },
-  { name: "React.js", icon: "react", color: "#61dafb", order: 4 },
-  { name: "Node.js", icon: "nodejs", color: "#3c873a", order: 5 },
-  { name: "Express.js", icon: "express", color: "#ffffff", order: 6 },
-  { name: "MongoDB", icon: "mongodb", color: "#47a248", order: 7 },
-  { name: "Git & GitHub", icon: "git", color: "#f05032", order: 8 },
-  { name: "AI & ML", icon: "aiml", color: "#a855f7", order: 9 },
-  { name: "Redux", icon: "redux", color: "#764abc", order: 10 },
-  { name: "JWT", icon: "jwt", color: "#fb015b", order: 11 },
-  { name: "Docker", icon: "docker", color: "#2496ed", order: 12 },
-  { name: "Postman", icon: "postman", color: "#ff6c37", order: 13 },
+  {
+    category: "Frontend",
+    skills: [
+      { name: "HTML5", icon: "html5", color: "#e34f26", order: 1 },
+      { name: "CSS3", icon: "css3", color: "#1572b6", order: 2 },
+      { name: "JavaScript", icon: "javascript", color: "#f7df1e", order: 3 },
+      { name: "React.js", icon: "react", color: "#61dafb", order: 4 },
+      { name: "Responsive Design", icon: "responsive", color: "#38bdf8", order: 5 },
+      { name: "TypeScript", icon: "typescript", color: "#3178c6", order: 6 },
+      { name: "Next.js", icon: "nextjs", color: "#ffffff", order: 7 },
+      { name: "Tailwind CSS", icon: "tailwind", color: "#38bdf8", order: 8 },
+    ],
+  },
+
+  {
+    category: "Backend",
+    skills: [
+      { name: "Node.js", icon: "nodejs", color: "#3c873a", order: 1 },
+      { name: "Express.js", icon: "express", color: "#ffffff", order: 2 },
+      { name: "REST APIs", icon: "api", color: "#00a884", order: 3 },
+      { name: "JWT Authentication", icon: "jwt", color: "#fb015b", order: 4 },
+      { name: "GraphQL", icon: "graphql", color: "#e10098", order: 5 },
+    ],
+  },
+
+  {
+    category: "Database",
+    skills: [
+      { name: "MongoDB", icon: "mongodb", color: "#47a248", order: 1 },
+      { name: "Redis", icon: "redis", color: "#dc382d", order: 2 },
+      { name: "PostgreSQL", icon: "postgresql", color: "#4169e1", order: 3 },
+    ],
+  },
+
+  {
+    category: "AI & Machine Learning",
+    skills: [
+      { name: "Python", icon: "python", color: "#3776ab", order: 1 },
+      { name: "Machine Learning", icon: "aiml", color: "#a855f7", order: 2 },
+      { name: "LLMs", icon: "llm", color: "#10a37f", order: 3 },
+      { name: "Prompt Engineering", icon: "prompt", color: "#f59e0b", order: 4 },
+      { name: "RAG", icon: "rag", color: "#8b5cf6", order: 5 },
+      { name: "Embeddings", icon: "embeddings", color: "#06b6d4", order: 6 },
+      { name: "Vector Databases", icon: "vectordb", color: "#ec4899", order: 7 },
+      { name: "AI Agents", icon: "agents", color: "#14b8a6", order: 8 },
+    ],
+  },
+
+  {
+    category: "Tools & DevOps",
+    skills: [
+      { name: "Git", icon: "git", color: "#f05032", order: 1 },
+      { name: "GitHub", icon: "github", color: "#ffffff", order: 2 },
+      { name: "Docker", icon: "docker", color: "#2496ed", order: 3 },
+      { name: "Postman", icon: "postman", color: "#ff6c37", order: 4 },
+      { name: "VS Code", icon: "vscode", color: "#007acc", order: 5 },
+      { name: "AWS", icon: "aws", color: "#ff9900", order: 6 },
+    ],
+  },
 ];
 
 const projectsData = [
   {
-    title: "Mern Portfolio Website",
+    title: "AI Resume Analyzer",
+    category: "AI & Full Stack",
     description:
-      "A personal portfolio website built with the MERN stack, showcasing my skills, projects, and experience with a clean, responsive UI.",
-    imageUrl: "/projects/mern-portfolio.png",
-    tags: ["React", "Node.js", "MongoDB", "Express.js"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Developed an AI-powered resume analysis application that evaluates resumes, extracts relevant skills, analyzes ATS compatibility, and provides personalized feedback to help candidates improve their resumes.",
+    imageUrl: "/projects/ai-resume-analyzer.jpg",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Python", "NLP", "Machine Learning", "AI"],
+    liveUrl: "https://ai-resume-analyzer1-n77d-8lahtmu56-dhilip5.vercel.app/",
+    githubUrl: "https://github.com/07dhilipkumar02/AI-RESUME-ANALYZER",
     featured: true,
     order: 1,
   },
   {
-    title: "Food Delivery App",
+    title: "AI Chatbot & RAG Application",
+    category: "Generative AI",
     description:
-      "A full stack food delivery application with cart, order tracking and payment.",
-    imageUrl: "/projects/food-app.jpg",
-    tags: ["MERN Stack", "Redux"],
-    liveUrl: "#",
-    githubUrl: "#",
+      "Built an intelligent AI chatbot using Large Language Models and Retrieval-Augmented Generation (RAG) to retrieve relevant contextual information, generate accurate responses, and provide interactive conversational experiences.",
+    imageUrl: "/projects/ai-chatbot.jpg",
+    tags: ["Python", "LLM", "RAG", "Embeddings", "Vector Database", "AI"],
+    liveUrl: "https://ai-chat-bot-wl8w.vercel.app/",
+    githubUrl: "https://github.com/07dhilipkumar02/AI-CHAT-BOT",
     featured: true,
     order: 2,
   },
   {
-    title: "AI Chatbot",
+    title: "Personal Portfolio Website",
     description:
-      "An AI-powered chatbot that uses machine learning and deep learning to hold natural conversations and answer user queries in real time.",
-    imageUrl: "/projects/ai-chatbot.jpg",
-    tags: ["Python", "ML", "DL", "OpenCv"],
+      "Designed and developed a responsive personal portfolio using the MERN stack to showcase professional experience, technical skills, projects, and career achievements with a modern user interface.",
+    imageUrl: "/projects/mern-portfolio.png",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true,
+    featured: false,
     order: 3,
   },
   {
-    title: "AI Resume Analyzer",
-    description: "A web application that uses AI to analyze resumes and provide feedback.",
-    imageUrl: "/projects/ai-resume-analyzer.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Express.js", "AI/ML"],
+    title: "Food Delivery Application",
+    description:
+      "Developed a full-stack food ordering application featuring restaurant listings, interactive menus, cart management, order processing, and a responsive user interface for seamless food ordering.",
+    imageUrl: "/projects/food-app.jpg",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Redux"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true,
-    order: 3,
+    featured: false,
+    order: 4,
   },
   {
-    title: "Face Recognition + Deepface System",
-    description: "A web application that uses AI to recognize faces and provide detailed analysis.",
+    title: "Face Recognition & DeepFace System",
+    description:
+      "Developed a facial recognition application leveraging computer vision and deep learning to detect and recognize faces from images and provide face analysis functionality.",
     imageUrl: "/projects/face-recognition.jpg",
-    tags: ["React", "Node.js", "Python", "Express.js", "AI/ML"],
+    tags: ["Python", "OpenCV", "DeepFace", "Machine Learning", "React.js"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true,
-    order: 3,
+    featured: false,
+    order: 5,
   },
   {
     title: "E-Commerce Web Application",
-    description: "A web application for buying and selling products online.",
+    description:
+      "Built a full-stack e-commerce application with product listings, shopping cart functionality, user authentication, and product management features, providing a responsive shopping experience.",
     imageUrl: "/projects/ecommerce.jpg",
-    tags: ["React", "Node.js", "MongoDB", "Express.js", "JWT",],
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
     liveUrl: "#",
     githubUrl: "#",
-    featured: true,
-    order: 3,
+    featured: false,
+    order: 6,
+  },
+  {
+    title: "Stock Flow Inventory",
+    description:
+      "An inventory management application for tracking products, stock movement, inventory levels, and operational data.",
+    imageUrl: "/projects/stock-flow.jpg",
+    tags: ["MERN Stack", "MongoDB", "REST API"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+    order: 7,
   },
 ];
 
@@ -129,12 +191,12 @@ const experienceData = [
     organization: "TechB Software Solutions",
     period: "Present",
     highlights: [
-      "Develop and maintain scalable web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
-      "Build responsive and user-friendly frontend interfaces using React.js, JavaScript, HTML, and CSS.",
-      "Develop and integrate RESTful APIs to connect frontend applications with backend services.",
-      "Work with MongoDB for database design, data management, and query optimization.",
-      "Debug, troubleshoot, and maintain applications to improve performance, reliability, and user experience.",
-      "Collaborate with team members to implement new features and enhance existing applications.",
+      "Develop and maintain responsive web applications using React.js, Node.js, Express.js, and MongoDB.",
+      "Build reusable frontend components and user-friendly interfaces using modern JavaScript.",
+      "Develop and integrate RESTful APIs for frontend and backend communication.",
+      "Implement database schemas, CRUD operations, and MongoDB queries.",
+      "Debug application issues and improve performance, functionality, and user experience.",
+      "Collaborate with team members to develop and maintain software applications.",
     ],
     order: 1,
   },
@@ -143,12 +205,12 @@ const experienceData = [
     organization: "Sukibhavan Properties",
     period: "Previous",
     highlights: [
-      "Developed responsive web applications using HTML, CSS, JavaScript, React.js, Node.js, Express.js, and MongoDB.",
-      "Integrated frontend and backend workflows using REST APIs and server-side services.",
-      "Designed and managed MongoDB data structures and optimized database queries for better application performance.",
-      "Implemented application features, fixed bugs, and performed troubleshooting across frontend and backend components.",
-      "Assisted with application deployment, maintenance, and production issue resolution.",
-      "Improved application responsiveness, usability, and overall performance through code and database optimization.",
+      "Developed responsive web applications using React.js, JavaScript, HTML, and CSS.",
+      "Built backend services and REST APIs using Node.js and Express.js.",
+      "Integrated frontend applications with backend APIs and MongoDB.",
+      "Implemented CRUD functionality and database management.",
+      "Improved UI responsiveness, application performance, and user experience.",
+      "Troubleshot and resolved frontend and backend application issues.",
     ],
     order: 2,
   },
@@ -165,7 +227,15 @@ const run = async () => {
   ]);
 
   await Profile.create(profileData);
-  await Skill.insertMany(skillsData);
+  // await Skill.insertMany(skillsData);
+  const formattedSkills = skillsData.flatMap((category) =>
+  category.skills.map((skill) => ({
+    ...skill,
+    category: category.category,
+  }))
+);
+
+await Skill.insertMany(formattedSkills);
   await Project.insertMany(projectsData);
   await Experience.insertMany(experienceData);
 

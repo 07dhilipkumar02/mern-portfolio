@@ -6,6 +6,7 @@ import Skills from "../components/Skills.jsx";
 import Projects from "../components/Projects.jsx";
 import Experience from "../components/Experience.jsx";
 import Stats from "../components/Stats.jsx";
+import Achievements from "../components/Achievements.jsx";
 import Contact from "../components/Contact.jsx";
 import Footer from "../components/Footer.jsx";
 import { getProfile, getSkills, getProjects, getExperience } from "../api.js";
@@ -59,6 +60,7 @@ export default function HomePage() {
       <Skills skills={skills} />
       <Projects projects={projects} />
       <Experience experience={experience} />
+      <Achievements />
       <Stats profile={profile} />
       <Contact profile={profile} />
       <Footer profile={profile} />

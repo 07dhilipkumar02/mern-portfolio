@@ -32,16 +32,16 @@ export default function Contact({ profile }) {
     { Icon: Github, label: "GitHub", value: profile.contact?.github },
     { Icon: Linkedin, label: "LinkedIn", value: profile.contact?.linkedin },
     { Icon: Globe, label: "Portfolio", value: profile.contact?.portfolio },
-  ];
+  ].filter((item) => item.value); // hide cards with no value
 
   return (
-    <section id="contact" className="section-container py-16">
+    <section id="contact" className="section-container py-10 md:py-12">
       <div className="flex items-center gap-2 text-primary mb-2">
         <Mail size={18} /> <span className="text-sm font-medium">Get In Touch</span>
       </div>
       <h2 className="text-3xl font-bold mb-2">Let's Work Together!</h2>
-      <p className="text-gray-400 mb-8">
-        I'm currently open to new opportunities. Let's build something amazing!
+      <p className="text-gray-400 mb-8 max-w-3xl leading-relaxed">
+        I'm open to Full Stack Developer and AI Full Stack Developer opportunities. I'm passionate about building modern web applications and intelligent AI-powered solutions. Let's connect and create something impactful!
       </p>
 
       <div className="grid md:grid-cols-[1fr_1.4fr] gap-8">

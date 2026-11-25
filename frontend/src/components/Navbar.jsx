@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Code2, Download, Menu, X } from "lucide-react";
 
-const LINKS = ["Home", "About", "Skills", "Projects", "Experience", "Contact"];
+const LINKS = ["Home", "About", "Skills", "Projects", "Experience", "Achievements", "Contact"];
 
 export default function Navbar({ name, resumeUrl }) {
   const [open, setOpen] = useState(false);
@@ -40,7 +40,16 @@ export default function Navbar({ name, resumeUrl }) {
   return (
     <header className="sticky top-0 z-50 bg-bg/90 backdrop-blur border-b border-border">
       <nav className="section-container flex items-center justify-between min-h-20 py-2">
-        <Link to="/" className="flex items-center">
+        <Link
+          to="/"
+          onClick={() => {
+            setActive("Home");
+            setOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="flex items-center cursor-pointer hover:opacity-90 transition-opacity"
+          aria-label="Go to home"
+        >
           {logoError ? (
             <Code2 className="text-primary" size={26} />
           ) : (
@@ -53,7 +62,7 @@ export default function Navbar({ name, resumeUrl }) {
           )}
         </Link>
 
-        <ul className="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-8 text-sm text-gray-300">
           {LINKS.map((link) => (
             <li key={link}>
               <button

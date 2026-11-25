@@ -7,7 +7,7 @@ export default function Hero({ profile, skills }) {
   const orbitSkills = skills.slice(0, 5);
 
   return (
-    <section id="home" className="section-container py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <section id="home" className="section-container py-10 md:py-14 grid md:grid-cols-2 gap-12 items-center">
       <div>
         <span className="inline-flex items-center gap-2 text-sm text-primary bg-primary/10 border border-primary/30 rounded-full px-3 py-1 mb-6">
           <span className="w-2 h-2 rounded-full bg-primary" /> {profile.role}

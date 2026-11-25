@@ -4,7 +4,7 @@ export default function Experience({ experience }) {
   if (!experience?.length) return null;
 
   return (
-    <section id="experience" className="section-container py-16">
+    <section id="experience" className="section-container py-10 md:py-12">
       <div className="flex items-center gap-2 text-primary mb-2">
         <Briefcase size={18} /> <span className="text-sm font-medium">Work Experience</span>
       </div>

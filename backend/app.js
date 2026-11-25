@@ -13,7 +13,28 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "*" }));
+// Allowed origins: CLIENT_URL (comma-separated list allowed) + any localhost port
+// in development, so Vite running on 5174/5175 or 127.0.0.1 doesn't break CORS.
+const allowedOrigins = (process.env.CLIENT_URL || "")
+  .split(",")
+  .map((o) => o.trim())
+  .filter(Boolean);
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (
+        !origin || // curl, Postman, server-to-server
+        allowedOrigins.length === 0 ||
+        allowedOrigins.includes(origin) ||
+        /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)
+      ) {
+        return callback(null, true);
+      }
+      return callback(new Error(`CORS blocked for origin ${origin}`));
+    },
+  })
+);
 app.use(express.json());
 
 // Make sure we have a DB connection before handling any request. connectDB()

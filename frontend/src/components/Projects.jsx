@@ -8,7 +8,7 @@ export default function Projects({ projects }) {
   const preview = projects.slice(0, 3);
 
   return (
-    <section id="projects" className="section-container py-16">
+    <section id="projects" className="section-container py-10 md:py-12">
       <div className="flex items-center justify-between mb-8">
         <div>
           <div className="flex items-center gap-2 text-primary mb-2">

@@ -7,32 +7,70 @@ import {
   Server,
   Leaf,
   GitBranch,
+  Github,
   BrainCircuit,
   Send,
   Container,
   KeyRound,
   Layers,
+  Network,
+  Database,
+  FileCode2,
+  MessageSquareText,
+  Sparkles,
+  FileSearch,
+  Waypoints,
+  Boxes,
+  Bot,
+  Terminal,
+  MonitorSmartphone,
+  FileType2,
+  Triangle,
+  Wind,
+  Share2,
+  Cylinder,
+  Cloud,
 } from "lucide-react";
 
-// Maps a skill's `icon` key (stored in MongoDB) to a lucide-react icon + brand color.
+// Maps a skill's `icon` key (stored in MongoDB) to a lucide-react icon + default color.
 const ICON_MAP = {
   html5: { Icon: Code2, color: "#e34f26" },
   css3: { Icon: Palette, color: "#1572b6" },
   javascript: { Icon: Braces, color: "#f7df1e" },
   react: { Icon: Atom, color: "#61dafb" },
+  redux: { Icon: Layers, color: "#764abc" },
+  responsive: { Icon: MonitorSmartphone, color: "#38bdf8" },
+  typescript: { Icon: FileType2, color: "#3178c6" },
+  nextjs: { Icon: Triangle, color: "#e5e7eb" },
+  tailwind: { Icon: Wind, color: "#38bdf8" },
+  graphql: { Icon: Share2, color: "#e10098" },
+  postgresql: { Icon: Cylinder, color: "#4169e1" },
+  aws: { Icon: Cloud, color: "#ff9900" },
   nodejs: { Icon: Hexagon, color: "#3c873a" },
   express: { Icon: Server, color: "#e5e7eb" },
-  mongodb: { Icon: Leaf, color: "#47a248" },
-  git: { Icon: GitBranch, color: "#f05032" },
-  aiml: { Icon: BrainCircuit, color: "#a855f7" },
-  postman: { Icon: Send, color: "#ff6c37" },
-  docker: { Icon: Container, color: "#2496ed" },
+  api: { Icon: Network, color: "#00a884" },
   jwt: { Icon: KeyRound, color: "#fb015b" },
-  redux: { Icon: Layers, color: "#764abc" },
+  mongodb: { Icon: Leaf, color: "#47a248" },
+  redis: { Icon: Database, color: "#dc382d" },
+  python: { Icon: FileCode2, color: "#3776ab" },
+  aiml: { Icon: BrainCircuit, color: "#a855f7" },
+  llm: { Icon: MessageSquareText, color: "#10a37f" },
+  prompt: { Icon: Sparkles, color: "#f59e0b" },
+  rag: { Icon: FileSearch, color: "#8b5cf6" },
+  embeddings: { Icon: Waypoints, color: "#06b6d4" },
+  vectordb: { Icon: Boxes, color: "#ec4899" },
+  agents: { Icon: Bot, color: "#14b8a6" },
+  git: { Icon: GitBranch, color: "#f05032" },
+  github: { Icon: Github, color: "#e5e7eb" },
+  docker: { Icon: Container, color: "#2496ed" },
+  postman: { Icon: Send, color: "#ff6c37" },
+  vscode: { Icon: Terminal, color: "#007acc" },
 };
 
-export default function SkillIcon({ iconKey, size = 28 }) {
+export default function SkillIcon({ iconKey, color, size = 28 }) {
   const entry = ICON_MAP[iconKey] || { Icon: Code2, color: "#22c55e" };
-  const { Icon, color } = entry;
-  return <Icon size={size} color={color} strokeWidth={1.75} />;
+  const { Icon } = entry;
+  // pure white looks harsh on the dark card, so soften it
+  const finalColor = color && color !== "#ffffff" ? color : entry.color;
+  return <Icon size={size} color={finalColor} strokeWidth={1.75} />;
 }

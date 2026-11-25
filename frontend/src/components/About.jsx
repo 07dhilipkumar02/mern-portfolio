@@ -35,7 +35,7 @@ export default function About({ profile }) {
   ];
 
   return (
-    <section id="about" className="section-container py-16">
+    <section id="about" className="section-container py-10 md:py-12">
       <div className="flex items-center gap-2 text-primary mb-2">
         <User size={18} /> <span className="text-sm font-medium">About Me</span>
       </div>

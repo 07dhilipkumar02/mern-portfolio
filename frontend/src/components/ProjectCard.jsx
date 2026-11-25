@@ -1,4 +1,4 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Star } from "lucide-react";
 
 export default function ProjectCard({ project }) {
   return (
@@ -11,6 +11,12 @@ export default function ProjectCard({ project }) {
         )}
       </div>
       <div className="p-5">
+        {project.featured && (
+          <div className="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/10 border border-primary/30 rounded-full px-2.5 py-1 mb-3">
+            <Star size={12} className="fill-current" />
+            Featured Project{project.category ? ` · ${project.category}` : ""}
+          </div>
+        )}
         <h3 className="font-semibold mb-2">{project.title}</h3>
         <p className="text-sm text-gray-400 mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
