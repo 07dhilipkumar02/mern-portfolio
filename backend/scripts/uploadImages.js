@@ -24,7 +24,8 @@ const IMAGES = [
   "/logo.png",
   "/trophy.jpg",
   ...fs
-    .readdirSync(path.join(PUBLIC_DIR, "projects"))
+    .readdirSync(fs.existsSync(path.join(PUBLIC_DIR, "projects")) ? path.join(PUBLIC_DIR, "projects") : PUBLIC_DIR)
+    .filter(() => fs.existsSync(path.join(PUBLIC_DIR, "projects")))
     .filter((f) => /\.(jpe?g|png|webp|gif)$/i.test(f))
     .map((f) => `/projects/${f}`),
 ];
@@ -37,11 +38,12 @@ const run = async () => {
     throw new Error("Add CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY and CLOUDINARY_API_SECRET to backend/.env");
   }
 
-  const map = {};
+  // Start from the existing map so images already on Cloudinary (and deleted locally) keep their URLs.
+  const map = fs.existsSync(BACKEND_MAP) ? JSON.parse(fs.readFileSync(BACKEND_MAP, "utf8")) : {};
   for (const localPath of IMAGES) {
     const file = path.join(PUBLIC_DIR, localPath);
     if (!fs.existsSync(file)) {
-      console.warn(`Skipped (not found): ${localPath}`);
+      console.warn(`Skipped (no local file, keeping existing Cloudinary URL): ${localPath}`);
       continue;
     }
     const publicId = localPath.replace(/^\//, "").replace(/\.[^.]+$/, ""); // e.g. projects/ai-chatbot
