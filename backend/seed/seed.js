@@ -5,6 +5,13 @@ import Profile from "../models/Profile.js";
 import Skill from "../models/Skill.js";
 import Project from "../models/Project.js";
 import Experience from "../models/Experience.js";
+import fs from "fs";
+
+// Cloudinary URLs written by `npm run upload:images` (falls back to local paths).
+const cloudinaryImages = JSON.parse(
+  fs.readFileSync(new URL("./cloudinary-images.json", import.meta.url), "utf8")
+);
+const img = (localPath) => cloudinaryImages[localPath] || localPath;
 
 dotenv.config();
 
@@ -15,8 +22,8 @@ const profileData = {
     "Full Stack Developer specializing in MERN stack development, building responsive web applications, REST APIs, and scalable backend solutions. Currently expanding my expertise in AI, LLMs, RAG, and Agentic AI to develop intelligent applications.",
   about:
     "I'm a Full Stack Developer with hands-on experience building modern web applications using the MERN stack. My expertise includes React.js, Node.js, Express.js, MongoDB, REST APIs, and responsive UI development.I enjoy solving real-world problems through clean, scalable, and user-friendly software. Alongside full-stack development, I'm expanding my knowledge in Artificial Intelligence, Machine Learning, Large Language Models, Retrieval-Augmented Generation (RAG), and AI-powered applications.I'm passionate about continuous learning, building innovative projects, and developing solutions that combine modern web technologies with AI.",
-  avatarUrl: "/dk.jpeg",
-  resumeUrl: "/Dhilip_kumar_MERN_Developer_Resume.pdf",
+  avatarUrl: img("/dk.jpeg"),
+  resumeUrl: "https://drive.google.com/uc?export=download&id=1igoVwwTba79woxFRtAGWIM27iCMsttsl",
   education: {
     degree: "BE EEE",
     institution: "Anna University",
@@ -109,7 +116,7 @@ const projectsData = [
     category: "AI & Full Stack",
     description:
       "Developed an AI-powered resume analysis application that evaluates resumes, extracts relevant skills, analyzes ATS compatibility, and provides personalized feedback to help candidates improve their resumes.",
-    imageUrl: "/projects/ai-resume-analyzer.jpg",
+    imageUrl: img("/projects/ai-resume-analyzer.jpg"),
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Python", "NLP", "Machine Learning", "AI"],
     liveUrl: "https://ai-resume-analyzer1-n77d-8lahtmu56-dhilip5.vercel.app/",
     githubUrl: "https://github.com/07dhilipkumar02/AI-RESUME-ANALYZER",
@@ -121,7 +128,7 @@ const projectsData = [
     category: "Generative AI",
     description:
       "Built an intelligent AI chatbot using Large Language Models and Retrieval-Augmented Generation (RAG) to retrieve relevant contextual information, generate accurate responses, and provide interactive conversational experiences.",
-    imageUrl: "/projects/ai-chatbot.jpg",
+    imageUrl: img("/projects/ai-chatbot.jpg"),
     tags: ["Python", "LLM", "RAG", "Embeddings", "Vector Database", "AI"],
     liveUrl: "https://ai-chat-bot-wl8w.vercel.app/",
     githubUrl: "https://github.com/07dhilipkumar02/AI-CHAT-BOT",
@@ -132,7 +139,7 @@ const projectsData = [
     title: "Personal Portfolio Website",
     description:
       "Designed and developed a responsive personal portfolio using the MERN stack to showcase professional experience, technical skills, projects, and career achievements with a modern user interface.",
-    imageUrl: "/projects/mern-portfolio.png",
+    imageUrl: img("/projects/mern-portfolio.png"),
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "REST APIs"],
     liveUrl: "#",
     githubUrl: "#",
@@ -143,7 +150,7 @@ const projectsData = [
     title: "Food Delivery Application",
     description:
       "Developed a full-stack food ordering application featuring restaurant listings, interactive menus, cart management, order processing, and a responsive user interface for seamless food ordering.",
-    imageUrl: "/projects/food-app.jpg",
+    imageUrl: img("/projects/food-app.jpg"),
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "Redux"],
     liveUrl: "https://food-app-frontend-dhilip5.vercel.app/",
     githubUrl: "https://github.com/07dhilipkumar02/Food-app",
@@ -154,7 +161,7 @@ const projectsData = [
     title: "Face Recognition & DeepFace System",
     description:
       "Developed a facial recognition application leveraging computer vision and deep learning to detect and recognize faces from images and provide face analysis functionality.",
-    imageUrl: "/projects/face-recognition.jpg",
+    imageUrl: img("/projects/face-recognition.jpg"),
     tags: ["Python", "OpenCV", "DeepFace", "Machine Learning", "React.js"],
     liveUrl: "https://face-recogonition-one.vercel.app/",
     githubUrl: "https://github.com/07dhilipkumar02/face_recogonition",
@@ -165,7 +172,7 @@ const projectsData = [
     title: "E-Commerce Web Application",
     description:
       "Built a full-stack e-commerce application with product listings, shopping cart functionality, user authentication, and product management features, providing a responsive shopping experience.",
-    imageUrl: "/projects/ecommerce.jpg",
+    imageUrl: img("/projects/ecommerce.jpg"),
     tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT"],
     // liveUrl: "#",
     // githubUrl: "#",
@@ -176,7 +183,7 @@ const projectsData = [
     title: "Stock Flow Inventory",
     description:
       "An inventory management application for tracking products, stock movement, inventory levels, and operational data.",
-    imageUrl: "/projects/stock-flow.jpg",
+    imageUrl: img("/projects/stock-flow.jpg"),
     tags: ["MERN Stack", "MongoDB", "REST API"],
     // liveUrl: "#",
     // githubUrl: "#",

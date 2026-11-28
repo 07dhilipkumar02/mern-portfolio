@@ -1,3 +1,4 @@
+import { img } from "../utils/img";
 import {
   Code,
   Rocket,
@@ -109,7 +110,7 @@ export default function Achievements() {
       <div className="grid lg:grid-cols-[1fr_1.6fr] gap-8 items-center">
         <div className="flex flex-col items-center text-center">
           <img
-            src="/trophy.jpg"
+            src={img("/trophy.jpg")}
             alt="Achievements trophy"
             className="w-full max-w-sm"
             style={{

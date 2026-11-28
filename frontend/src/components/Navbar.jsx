@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { Code2, Download, Menu, X } from "lucide-react";
+import { img } from "../utils/img";
 
 const LINKS = ["Home", "About", "Skills", "Projects", "Experience", "Achievements", "Contact"];
+
+const DEFAULT_CV_ID = "1igoVwwTba79woxFRtAGWIM27iCMsttsl";
+
+// Turns any Google Drive share link (or a bad "/https://..." value) into a direct PDF download link.
+function toPdfDownloadUrl(url) {
+  const clean = (url || "").trim().replace(/^\/+(?=https?:\/\/)/, "");
+  const match = clean.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?.*?id=)([\w-]+)/);
+  const id = match ? match[1] : !clean ? DEFAULT_CV_ID : null;
+  if (id) return `https://drive.google.com/uc?export=download&id=${id}`;
+  return clean; // e.g. "/Dhilipkumar_CV.pdf" served from frontend/public
+}
 
 export default function Navbar({ name, resumeUrl }) {
   const [open, setOpen] = useState(false);
@@ -54,7 +66,7 @@ export default function Navbar({ name, resumeUrl }) {
             <Code2 className="text-primary" size={26} />
           ) : (
             <img
-              src="/logo.png"
+              src={img("/logo.png")}
               alt={name || "Portfolio"}
               className="h-24 w-auto object-contain px-1"
               onError={() => setLogoError(true)}
@@ -80,10 +92,9 @@ export default function Navbar({ name, resumeUrl }) {
         </ul>
 
         <a
-          href={resumeUrl || "#"}
-          download={!!resumeUrl}
-          target={resumeUrl ? "_blank" : undefined}
-          rel={resumeUrl ? "noreferrer" : undefined}
+          href={toPdfDownloadUrl(resumeUrl)}
+          download="Dhilipkumar_CV.pdf"
+          rel="noreferrer"
           className="hidden md:inline-flex items-center gap-2 border border-primary text-primary rounded-md px-4 py-2 text-sm hover:bg-primary hover:text-black transition-colors"
         >
           <Download size={16} /> Download CV

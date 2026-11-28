@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Code2, Github, Linkedin, ArrowUp, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { img } from "../utils/img";
 
 const QUICK_LINKS = ["Home", "About", "Skills", "Projects", "Experience", "Achievements", "Contact"];
 const SERVICES = [
@@ -75,7 +76,7 @@ export default function Footer({ profile }) {
               <Code2 className="text-primary" size={28} />
             ) : (
               <img
-                src="/logo.png"
+                src={img("/logo.png")}
                 alt={profile?.name || "Portfolio"}
                 className="h-20 w-auto object-contain"
                 onError={() => setLogoError(true)}
